@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "d09d52d4-255c-4e21-a229-1919425d6b09",
+		"name": "employees",
+		"description": "Use these requests to interact with the 'Empployees' REST server. ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "smoke test - is it running?",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080",
+					"host": [
+						"localhost"
+					],
+					"port": "8080"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE a New Employee record",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"FirstName\": \"Test\",\n\t\"MiddleInitial\": \"R\",\n\t\"LastName\": \"McTester\",\n\t\"DateOfBirth\": \"1950-01-01\",\n\t\"DateOfEmployment\": \"2019-01-01\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE a New (Second) Employee record",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"FirstName\": \"Alt\",\n\t\"LastName\": \"Ernative\",\n\t\"DateOfBirth\": \"1960-01-01\",\n\t\"DateOfEmployment\": \"2019-02-01\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET All Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees"
+					]
+				},
+				"description": "returns all 'ACTIVE' employees"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE An Employee",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"DateOfEmployment\": \"2019-02-08\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/employees/fe10e4f0-c719-11e8-8809-d61257676275",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"fe10e4f0-c719-11e8-8809-d61257676275"
+					]
+				},
+				"description": "change the start date."
+			},
+			"response": []
+		},
+		{
+			"name": "GET an Auth Token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "De-Activate an Employee (requires Auth Token)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/employees/deactivate/02994050-c727-11e8-97fd-d61257676275",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"deactivate",
+						"02994050-c727-11e8-97fd-d61257676275"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE an Employee",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8080/employees/02994050-c727-11e8-97fd-d61257676275",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"02994050-c727-11e8-97fd-d61257676275"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

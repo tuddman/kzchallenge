@@ -2,9 +2,9 @@
 
 a simple RESTful Server to demonstrate basic API abilities.
 
-# Setup
+## Setup
 
-## Directly 
+### Directly 
 
 #### Prerequisites :
 
@@ -19,17 +19,17 @@ java -jar target/employees-standalone.jar start
 
 or 
 
-## Dockerized
+### Dockerized
 
 ```bash
 cd kzchallenge 
 docker build -t kzchallenge:employees . 
-docker run --name employeeserver kzhallenge:employees
+docker run --name employeeserver kzchallenge:employees
 ```
 
 # Usage
 
-Install [postman](https://www.getpostman.com/apps) to have easy access to ALL of the possible REST calls.  Postman collection is included in `dev-resources/employees.json`
+Install [postman](https://www.getpostman.com/apps) to have easy access to all of the possible REST calls.  Postman collection is included in `dev-resources/employees.json`
 
 Import the collection.
 
